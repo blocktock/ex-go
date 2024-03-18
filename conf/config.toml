@@ -1,0 +1,60 @@
+# 运行模式(debug:调试,test:测试,release:正式)
+run_mode = "debug"
+
+# 运行环境（test\uat\sim\prod）
+app_env = "test"
+
+#项目名称
+app = "ex-go"
+
+#时区
+timezone = "UTC"
+
+[http]
+# http监听地址
+host = "0.0.0.0"
+# http监听端口
+port = 10012
+# 证书路径
+certfile = ""
+# 证书密钥
+keyfile = ""
+# http优雅关闭等待超时时长(单位秒)
+shutdowntimeout = 30
+# 允许的最大内容长度(64m)
+maxcontentlength = 67108864
+# 允许输出的最大请求日志长度
+maxreqloggerlength = 1024
+
+[Gorm]
+# 是否开启调试模式
+Debug = true
+# 数据库类型(目前支持的数据库类型：mysql/sqlite3/postgres)
+DBType = "mysql"
+# 设置连接可以重用的最长时间(单位：秒)
+MaxLifetime = 7200
+# 设置数据库的最大打开连接数
+MaxOpenConns = 150
+# 设置空闲连接池中的最大连接数
+MaxIdleConns = 50
+# 数据库表名前缀
+TablePrefix = ""
+
+[MySQL]
+# 连接地址
+Host = "127.0.0.1"
+# 连接端口
+Port = 3306
+# 用户名
+User = "root"
+# 密码
+Password = ""
+# 数据库
+DBName = "demo"
+# 连接参数
+Parameters = "charset=utf8mb4&parseTime=True&loc=Local&allowNativePasswords=true"
+
+[Redis]
+addr = "127.0.0.1:16379"
+password = ""
+db = 5
