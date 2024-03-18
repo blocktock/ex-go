@@ -15,7 +15,7 @@ type UserHandle struct {
 
 func (uc *UserHandle) CreateUser(c *gin.Context) {
 
-	var requestData schema.CreateUserRequestDTO
+	var requestData schema.CreateUserParams
 
 	// 解析 JSON 请求体
 	if err := c.ShouldBindJSON(&requestData); err != nil {

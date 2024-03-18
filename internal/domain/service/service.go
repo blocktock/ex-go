@@ -13,7 +13,7 @@ var ServiceSet = wire.NewSet(
 ) // end
 
 type IUserService interface {
-	CreateUser(createUserRequestDTO schema.CreateUserRequestDTO) error
+	CreateUser(createUserRequestDTO schema.CreateUserParams) error
 }
 
 type ILoginService interface {
