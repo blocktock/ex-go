@@ -17,11 +17,11 @@ type UserService struct {
 	UserCacheRepo cache.IUserCacheRepository
 }
 
-func (s *UserService) CreateUser(createUserRequestDTO schema.CreateUserRequestDTO) error {
+func (s *UserService) CreateUser(userParams schema.CreateUserParams) error {
 
 	data := user.User{
-		ID:   1,
-		Name: createUserRequestDTO.Name,
+		Id:          1,
+		EnShortName: userParams.Name,
 	}
 
 	return s.UserRepo.Save(&data)

@@ -3,6 +3,6 @@
 package schema
 
 // CreateUserRequestDTO 定义了创建用户请求的DTO
-type CreateUserRequestDTO struct {
+type CreateUserParams struct {
 	Name string `json:"name"`
 }
