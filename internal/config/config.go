@@ -5,14 +5,21 @@ import "fmt"
 var C = new(Config)
 
 type Config struct {
-	App      string `toml:"app"`
+	App string `toml:"app"`
+
 	AppEnv   string `toml:"app_env"`
 	RunMode  string `toml:"run_mode"`
 	Timezone string `toml:"timezone"`
+	Log      Log    `toml:"log"`
 	HTTP     HTTP   `toml:"http"`
 	MySQL    MySQL  `toml:"mysql"`
 	Gorm     Gorm   `toml:"gorm"`
 	Redis    Redis  `toml:"redis"`
+}
+
+type Log struct {
+	Level      int8
+	OutputPath string
 }
 
 type HTTP struct {

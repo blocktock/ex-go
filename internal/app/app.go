@@ -6,6 +6,7 @@ import (
 	"ex-go/internal/config"
 	"fmt"
 	"github.com/blocktock/go-pkg/load"
+	"github.com/blocktock/go-pkg/log"
 	"github.com/blocktock/go-pkg/nobug"
 	"github.com/gin-gonic/gin"
 	"github.com/google/wire"
@@ -25,6 +26,9 @@ type App struct {
 func Start(ctx context.Context) {
 
 	load.FileConfig(config.C, "./conf/config.toml")
+
+	//init logger
+	log.InitLogger(config.C.Log.OutputPath)
 
 	injector, injectorCleanFunc, err := InitServer()
 	if err != nil {
