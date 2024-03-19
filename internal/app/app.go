@@ -4,9 +4,9 @@ import (
 	"context"
 	"errors"
 	"ex-go/internal/config"
-	"ex-go/pkg/load"
-	"ex-go/pkg/nobug"
 	"fmt"
+	"github.com/blocktock/go-pkg/load"
+	"github.com/blocktock/go-pkg/nobug"
 	"github.com/gin-gonic/gin"
 	"github.com/google/wire"
 	"net/http"
@@ -43,7 +43,7 @@ func Start(ctx context.Context) {
 
 	nobug.Nobug()
 
-	quit := make(chan os.Signal)
+	quit := make(chan os.Signal, 1)
 	// When received, the signal will be sent to the quit channel
 	signal.Notify(quit, syscall.SIGINT, syscall.SIGTERM)
 	go func() {
