@@ -3,7 +3,7 @@ module ex-go
 go 1.21
 
 require (
-	github.com/blocktock/go-pkg v0.0.2
+	github.com/blocktock/go-pkg v0.0.3
 	github.com/gin-gonic/gin v1.9.1
 	github.com/go-redis/redis/v8 v8.11.5
 	github.com/google/wire v0.6.0
