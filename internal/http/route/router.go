@@ -9,7 +9,7 @@ import (
 var RouterSet = wire.NewSet(wire.Struct(new(Router), "*"))
 
 type Router struct {
-	User *handle.UserHandle
+	User handle.IUserHandle
 }
 
 func (r *Router) RegisterApi(engine *gin.Engine) {

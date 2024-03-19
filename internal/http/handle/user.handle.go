@@ -7,7 +7,7 @@ import (
 	"github.com/google/wire"
 )
 
-var UserSet = wire.NewSet(wire.Struct(new(UserHandle), "*"))
+var UserSet = wire.NewSet(wire.Struct(new(UserHandle), "*"), wire.Bind(new(IUserHandle), new(*UserHandle)))
 
 type UserHandle struct {
 	UserService service.IUserService
