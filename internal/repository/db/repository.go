@@ -1,6 +1,7 @@
 package db
 
 import (
+	"context"
 	"ex-go/internal/model/user"
 	"github.com/google/wire"
 )
@@ -10,8 +11,8 @@ var DBRepoSet = wire.NewSet(
 ) // end
 
 type IUserRepository interface {
-	Save(user *user.User) error
-	Update(user *user.User) error
-	FindByUid(user *user.User) error
-	GetUserList(user *user.User) error
+	Save(ctx context.Context, user *user.User) error
+	Update(ctx context.Context, user *user.User) error
+	FindByUid(ctx context.Context, user *user.User) error
+	GetUserList(ctx context.Context, user *user.User) error
 }

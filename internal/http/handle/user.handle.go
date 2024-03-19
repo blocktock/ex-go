@@ -24,8 +24,10 @@ func (uc *UserHandle) CreateUser(c *gin.Context) {
 		return
 	}
 
+	ctx := c.Request.Context()
+
 	// 调用服务层处理请求
-	err := uc.UserService.CreateUser(requestData)
+	err := uc.UserService.CreateUser(ctx, requestData)
 	if err != nil {
 		ginx.ResError(c, 500, err.Error())
 		return

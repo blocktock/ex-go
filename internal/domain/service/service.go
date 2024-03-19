@@ -3,6 +3,7 @@
 package service
 
 import (
+	"context"
 	"ex-go/internal/schema"
 	"github.com/google/wire"
 )
@@ -13,9 +14,9 @@ var ServiceSet = wire.NewSet(
 ) // end
 
 type IUserService interface {
-	CreateUser(createUserRequestDTO schema.CreateUserParams) error
+	CreateUser(ctx context.Context, createUserRequestDTO schema.CreateUserParams) error
 }
 
 type ILoginService interface {
-	Login() error
+	Login(ctx context.Context) error
 }

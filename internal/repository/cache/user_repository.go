@@ -1,6 +1,7 @@
 package cache
 
 import (
+	"context"
 	"github.com/go-redis/redis/v8"
 	"github.com/google/wire"
 )
@@ -11,7 +12,7 @@ type UserCacheRepository struct {
 	Cache *redis.Client
 }
 
-func (r *UserCacheRepository) Save() error {
+func (r *UserCacheRepository) Save(ctx context.Context) error {
 	// 实现保存用户到 MySQL 数据库的逻辑
 	return nil
 }

@@ -1,6 +1,7 @@
 package service
 
 import (
+	"context"
 	"ex-go/internal/model/user"
 	"ex-go/internal/repository/cache"
 	"ex-go/internal/repository/db"
@@ -17,12 +18,12 @@ type UserService struct {
 	UserCacheRepo cache.IUserCacheRepository
 }
 
-func (s *UserService) CreateUser(userParams schema.CreateUserParams) error {
+func (s *UserService) CreateUser(ctx context.Context, userParams schema.CreateUserParams) error {
 
 	data := user.User{
 		Id:          1,
 		EnShortName: userParams.Name,
 	}
 
-	return s.UserRepo.Save(&data)
+	return s.UserRepo.Save(ctx, &data)
 }

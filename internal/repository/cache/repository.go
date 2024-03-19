@@ -1,6 +1,7 @@
 package cache
 
 import (
+	"context"
 	"github.com/google/wire"
 )
 
@@ -9,5 +10,5 @@ var CacheRepoSet = wire.NewSet(
 ) // end
 
 type IUserCacheRepository interface {
-	Save() error
+	Save(ctx context.Context) error
 }

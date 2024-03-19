@@ -1,6 +1,7 @@
 package service
 
 import (
+	"context"
 	"ex-go/internal/repository/cache"
 	"ex-go/internal/repository/db"
 	"github.com/google/wire"
@@ -13,6 +14,6 @@ type LoginService struct {
 	UserCacheRepo cache.IUserCacheRepository
 }
 
-func (s *LoginService) Login() error {
+func (s *LoginService) Login(ctx context.Context) error {
 	return nil
 }
